@@ -1,0 +1,65 @@
+/* Project Detail Page CSS */
+:root {
+	--primary-color: #00ADB5;
+	--secondary-color: #222831;
+	--text-primary: #EEEEEE;
+	--text-secondary: #B8B8B8;
+	--background: #0F0F0F;
+	--border-radius: 12px;
+}
+
+* { box-sizing: border-box; }
+body {
+	margin: 0;
+	font-family: 'Kanit', sans-serif;
+	background: var(--background);
+	color: var(--text-primary);
+	line-height: 1.7;
+}
+
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+.header { padding: 20px 0 10px; }
+.breadcrumb a { color: var(--text-secondary); text-decoration: none; }
+.breadcrumb a:hover { color: var(--primary-color); }
+
+.title { font-size: 2rem; margin: 0.25rem 0 0.75rem; }
+.subtitle { color: var(--text-secondary); margin-bottom: 1.25rem; }
+
+.cover {
+	width: 80%;
+	height: 500px;
+	object-fit: cover;
+	border-radius: var(--border-radius);
+	border: 1px solid rgba(0, 173, 181, 0.2);
+	background: #111;
+}
+
+.content { margin-top: 1.5rem; }
+.section { margin: 1.25rem 0; }
+.section h3 { color: var(--primary-color); margin: 0 0 0.5rem; font-size: 1.1rem; }
+.section p { color: var(--text-secondary); margin: 0.25rem 0; }
+
+.tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.tag {
+	background: rgba(0, 173, 181, 0.18);
+	color: var(--primary-color);
+	padding: 0.2rem 0.6rem;
+	border-radius: 999px;
+	font-size: 0.85rem;
+	border: 1px solid rgba(0, 173, 181, 0.28);
+}
+
+.actions { display: flex; gap: 0.75rem; margin-top: 1rem; }
+.btn { 
+	padding: 0.6rem 1rem; 
+	border-radius: 10px; 
+	border: 1px solid rgba(0, 173, 181, 0.35);
+	color: var(--text-primary); 
+	text-decoration: none;
+	display: inline-block;
+}
+.btn.primary { background: var(--primary-color); color: #fff; border-color: transparent; }
+.btn.outline { background: transparent; }
+
+.footer { color: var(--text-secondary); margin: 2rem 0 1rem; font-size: 0.95rem; text-align: center; }
