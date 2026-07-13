@@ -1,31 +1,45 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karin Portfolio - นักพัฒนาเว็บไซต์</title>
+    <title>Karin Portfolio - นักพัฒนาเว็บไซต์ & นักประดิษฐ์ IoT</title>
+    <meta name="description" content="พอร์ตโฟลิโอสะสมผลงานของ นายกรินทร์ ชัยอมรวานิช (แบงค์) นักพัฒนาเว็บไซต์และผู้ชื่นชอบการพัฒนาหุ่นยนต์ IoT">
+    
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Ambient Background Follower -->
+    <div class="glow-bg"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="#home" class="nav-logo">
                 <img src="img/logo.png" alt="Karin Logo">
-                <span></span>
-            </div>
+                <span class="logo-text">Karin.Dev</span>
+            </a>
+            
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i> หน้าแรก</a></li>
+                <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> หน้าแรก</a></li>
                 <li><a href="#about" class="nav-link"><i class="fas fa-user"></i> เกี่ยวกับ</a></li>
                 <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> ทักษะ</a></li>
-                <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> โปรเจค</a></li>
+                <li><a href="#projects" class="nav-link"><i class="fas fa-project-diagram"></i> ผลงาน</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="theme-btn">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,71 +49,107 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-code"></i>
-                    <span>Beginner</span>
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Developer & Maker</span>
                 </div>
                 <h1 class="hero-title">
                     <span class="gradient-text">Karin Chaiamonvanich</span>
                     <span class="thai-name">กรินทร์ ชัยอมรวานิช</span>
                 </h1>
-                <p class="hero-description">
-                    สวัสดีครับ! ผมชื่อ นายกรินทร์ ชัยอมรวานิช อายุ 17 ปี ชื่อเล่น แบงค์ 
-                    กำลังศึกษาอยู่ในระดับมัธยมศึกษาปีที่ 6 ที่โรงเรียนบึงกาฬ 
-                    <span id="dots">...</span>
-                    <span id="more">
-                    เริ่มชื่นชอบการเขียนโค้ดตั้งแต่ประถม เพราะมีอาจารย์มาชวนพาไปแข่งหุ่นยนต์ระดับกลาง สูงและผสม 
-                    และผมรู้สึกชอบมันตั้งแต่นั้นมา และผมมีความใฝ่ฝันอยากศึกษามหาลัยต่อไปเป็นเด็กพระจอมเกล้า
-                    </span>
-                </p>
+                
+                <!-- Typing Text Animation -->
+                <div class="hero-typing">
+                    <span class="type-prefix">ผมสนใจด้าน </span>
+                    <span id="typing-text" class="type-text"></span>
+                    <span class="cursor">&nbsp;</span>
+                </div>
+
                 <div class="hero-buttons">
-                    <button onclick="myFunction()" id="myBtn" class="btn btn-primary">
-                        <i class="fas fa-arrow-down"></i> อ่านเพิ่มเติม
-                    </button>
-                    <a href="https://github.com/karinchaiamonvanich" class="btn btn-secondary">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-compass"></i> สำรวจผลงาน
+                    </a>
+                    <a href="https://github.com/karinchaiamonvanich" target="_blank" rel="noopener" class="btn btn-secondary">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                 </div>
             </div>
+            
             <div class="hero-image">
                 <div class="profile-card">
                     <img src="img/profile.png" alt="Karin Profile">
-                    <div class="profile-overlay">
-                        <!-- <p>IT Camp 21</p> -->
-                    </div>
+                    <div class="profile-glow"></div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <a href="#about" aria-label="Scroll to About"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section (Bento Grid Layout) -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">เกี่ยวกับตัวผม</h2>
-            <div class="about-content">
-                <div class="about-text">
+            <div class="bento-grid">
+                
+                <!-- Card 1: ประสบการณ์ & ความสนใจ (กว้าง 2, สูง 2) -->
+                <div class="bento-card bento-col-2 bento-row-2">
+                    <div class="card-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <h3>ประสบการณ์และความสนใจ</h3>
-                    <p>ผมมีความหลงใหลในการเขียนโค้ดและการพัฒนาเว็บไซต์มาตั้งแต่เด็ก 
-                    เริ่มต้นจากการแข่งขันหุ่นยนต์ที่ทำให้ผมได้เรียนรู้พื้นฐานของโปรแกรมมิ่ง 
-                    และพัฒนาต่อมาจนถึงการสร้างเว็บไซต์และแอปพลิเคชัน</p>
-                    
-                    <h3>เป้าหมายในอนาคต</h3>
-                    <p>ผมตั้งใจจะศึกษาต่อในระดับมหาวิทยาลัย โดยเฉพาะในสาขาวิศวกรรมคอมพิวเตอร์ 
-                    ที่มหาวิทยาลัยชั้นนำด้านวิทยาศาสตร์ เทคโนโลยี เพื่อพัฒนาทักษะและความรู้ให้ก้าวหน้ายิ่งขึ้น</p>
+                    <p>ผมมีความหลงใหลในการเขียนโปรแกรมและการพัฒนาฮาร์ดแวร์/ซอฟต์แวร์มาโดยตลอด เริ่มต้นสะสมประสบการณ์ในแวดวง <strong>IoT, หุ่นยนต์เดินตามเส้น</strong> ไปจนถึงการพัฒนาเว็บด้วยเฟรมเวิร์กสมัยใหม่ เช่น <strong>Svelte และ Tailwind CSS</strong></p>
+                    <br>
+                    <p>นอกจากการเรียนรู้เดี่ยวแล้ว ผมยังมีความสุขกับการนำทักษะเข้าร่วมการแข่งขันระดับประเทศ เช่น <strong>Cyber Security (CTF), Hackathons ต่างๆ</strong> รวมถึงการเป็นวิทยากรแบ่งปันความรู้และประสบการณ์ให้กับโรงเรียนอื่นๆ</p>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">7</div>
-                        <div class="stat-label">เดือนประสบการณ์</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">2+</div>
-                        <div class="stat-label">โปรเจคสำเร็จ</div>
-                    </div>
 
+                <!-- Card 2: ประวัติโดยย่อ -->
+                <div class="bento-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>ประวัติโดยย่อ</h3>
+                    <p class="highlight-text">นายกรินทร์ ชัยอมรวานิช</p>
+                    <p>ชื่อเล่น: <strong>แบงค์ (Bank)</strong><br>อายุ: <strong>17 ปี</strong><br>การศึกษา: <strong>ชั้น ม.6 โรงเรียนบึงกาฬ</strong></p>
                 </div>
+
+                <!-- Card 3: เป้าหมายในอนาคต -->
+                <div class="bento-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>เป้าหมายในอนาคต</h3>
+                    <p class="highlight-text">วิศวกรรมคอมพิวเตอร์</p>
+                    <p>มุ่งมั่นเข้าศึกษาต่อในระดับปริญญาตรี ณ <strong>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง (KMITL)</strong></p>
+                </div>
+
+                <!-- Card 4: จุดเริ่มต้นของความชอบ -->
+                <div class="bento-card">
+                    <div class="card-icon">
+                        <i class="fas fa-fire-alt"></i>
+                    </div>
+                    <h3>จุดเริ่มต้น</h3>
+                    <p>เริ่มเขียนโค้ดตั้งแต่ระดับชั้นประถมศึกษา จากการแข่งขันหุ่นยนต์ระดับกลาง-สูง จนค้นพบความหลงใหลในเทคโนโลยีและการแก้ปัญหา</p>
+                </div>
+
+                <!-- Card 5: สถิติผลงานสำคัญ (กว้าง 2) -->
+                <div class="bento-card bento-col-2">
+                    <div class="bento-stats">
+                        <div class="bento-stat-item">
+                            <span class="bento-stat-number">1+</span>
+                            <span class="bento-stat-label">ปี ประสบการณ์เรียนรู้</span>
+                        </div>
+                        <div class="bento-stat-item">
+                            <span class="bento-stat-number">10+</span>
+                            <span class="bento-stat-label">โปรเจกต์ & กิจกรรม</span>
+                        </div>
+                        <div class="bento-stat-item">
+                            <span class="bento-stat-number">5+</span>
+                            <span class="bento-stat-label">รางวัลและการแข่งขัน</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -110,33 +160,36 @@
             <h2 class="section-title">ทักษะและความเชี่ยวชาญ</h2>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-globe"></i> Development</h3>
+                    <div class="category-header">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>Development</h3>
+                    </div>
                     <div class="skill-items">
-                        <div class="skill-item">
+                        <div class="skill-item" title="HTML5">
                             <img src="img/html.png" alt="HTML">
                             <span>HTML5</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="CSS3">
                             <img src="img/css.png" alt="CSS">
                             <span>CSS3</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="JavaScript">
                             <img src="img/js.png" alt="JavaScript">
                             <span>JavaScript</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="Svelte">
                             <img src="img/svelte.png" alt="Svelte">
                             <span>Svelte</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="Tailwind CSS">
                             <img src="img/tailwindCSS.png" alt="Tailwind CSS">
-                            <span>Tailwind CSS</span>
+                            <span>Tailwind</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="Python">
                             <img src="img/python.png" alt="Python">
                             <span>Python</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item" title="GitHub">
                             <img src="img/github.png" alt="GitHub">
                             <span>GitHub</span>
                         </div>
@@ -144,17 +197,16 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-palette"></i> Design & Media</h3>
+                    <div class="category-header">
+                        <i class="fas fa-fill-drip"></i>
+                        <h3>Design & Media</h3>
+                    </div>
                     <div class="skill-items">
-                        <div class="skill-item">
+                        <div class="skill-item" title="Photoshop">
                             <img src="img/PS.png" alt="Photoshop">
                             <span>Photoshop</span>
                         </div>
-                        <!-- <div class="skill-item">
-                            <img src="img/LR.png" alt="Lightroom">
-                            <span>Lightroom</span>
-                        </div> -->
-                        <div class="skill-item">
+                        <div class="skill-item" title="CapCut">
                             <img src="img/capcut.png" alt="CapCut">
                             <span>CapCut</span>
                         </div>
@@ -162,18 +214,21 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h3><i class="fas fa-mobile-alt"></i> Robot</h3>
+                    <div class="category-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Robotics & IoT</h3>
+                    </div>
                     <div class="skill-items">
-                        <div class="skill-item">
-                            <img src="img/KB.png" alt="Kotlin">
+                        <div class="skill-item" title="Kidbright">
+                            <img src="img/KB.png" alt="Kidbright">
                             <span>Kidbright</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="img/mb.png" alt="Mobile Development">
+                        <div class="skill-item" title="Micro:bit">
+                            <img src="img/mb.png" alt="Micro:bit">
                             <span>Micro:bit</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="img/arduino.png" alt="Mobile Development">
+                        <div class="skill-item" title="Arduino">
+                            <img src="img/arduino.png" alt="Arduino">
                             <span>Arduino</span>
                         </div>
                     </div>
@@ -185,316 +240,309 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">ผลงานโปรเจคและแพลนในอนาคต</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+            <h2 class="section-title">ผลงานและกิจกรรม</h2>
+            
+            <!-- Filters -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
+                <button class="filter-btn" data-filter="iot">IoT & หุ่นยนต์</button>
+                <button class="filter-btn" data-filter="game">เกม & ซอฟต์แวร์</button>
+                <button class="filter-btn" data-filter="camp">ค่ายและการแข่งขัน</button>
+                <button class="filter-btn" data-filter="cert">ใบเซอร์และการอบรม</button>
+            </div>
+
+            <!-- Unified Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- 1. หุ่นยนต์เดินหลบสิ่งกีดขวาง -->
+                <div class="project-card" data-category="iot">
                     <div class="project-image">
-                        <a href="projects/myrobot.html"><img src="img/png.png" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/myrobot.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/png.png" alt="หุ่นยนต์เดินหลบสิ่งกีดขวาง">
+                        <div class="project-badge">IoT & Robot</div>
                     </div>
                     <div class="project-content">
                         <h3>หุ่นยนต์เดินหลบสิ่งกีดขวาง</h3>
-                        <p>เรียนรู้และศึกษาการทำงานและการ Coding ภาษา C</p>
+                        <p>เรียนรู้การพัฒนาและการ Coding ภาษา C สำหรับคุมเซ็นเซอร์ตรวจวัดและมอเตอร์</p>
                         <div class="project-tags">
                             <span class="tag">Arduino</span>
                             <span class="tag">IoT</span>
                             <span class="tag">C</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/myrobot.html" class="btn btn-primary">
+                            <a href="projects/myrobot.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 2. เกม2D : ล่าเหรียญ P'Nui -->
+                <div class="project-card" data-category="game">
                     <div class="project-image">
-                        <a href="projects/game.html"><img src="img/game.png" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/game.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/game.png" alt="เกม2D : ล่าเหรียญ P'Nui">
+                        <div class="project-badge">Game</div>
                     </div>
                     <div class="project-content">
                         <h3>เกม2D : ล่าเหรียญ P'Nui</h3>
-                        <p>เรียนรู้และศึกษาการสร้างเกมด้วย Unity โดยใช้ Visual Scripting</p>
+                        <p>ศึกษาทฤษฎีการออกแบบเกมและการสร้างสรรค์ตัวเกม 2D บนเอนจิน Unity</p>
                         <div class="project-tags">
                             <span class="tag">Unity</span>
                             <span class="tag">Game</span>
+                            <span class="tag">Visual Script</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/game.html" class="btn btn-primary">
+                            <a href="projects/game.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-            
-            </div>
-        </div>
-        <!-- การแข่งขันต่างๆ -->
-        <div class="container">
-            <h2 class="section-title">การแข่งขันและกิจกรรมต่างๆ</h2>
-            <div class="projects-grid">
-                <div class="project-card">
+
+                <!-- 3. Thailand Cyber Top Talent 2025 -->
+                <div class="project-card" data-category="camp">
                     <div class="project-image">
-                        <a href="projects/ctf.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPEYRjI5xxnXU-rtqb3kI2G1WOWawT9JwPA&s" alt="CTF"></a>
-                        <div class="project-overlay">
-                            <a href="projects/ctf.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNPEYRjI5xxnXU-rtqb3kI2G1WOWawT9JwPA&s" alt="Thailand Cyber Top Talent">
+                        <div class="project-badge">Competition</div>
                     </div>
                     <div class="project-content">
                         <h3>Thailand Cyber Top Talent 2025</h3>
-                        <p>การแข่งขันทั่วประเทศเกี่ยวกับการแข่งชิงธง CTF</p>
+                        <p>การแข่งขัน CTF ชิงธงระดับประเทศ ฝึกเจาะระบบ แก้โจทย์ด้านความปลอดภัยไซเบอร์</p>
                         <div class="project-tags">
                             <span class="tag">Cyber</span>
-					        <span class="tag">Web</span>
-					        <span class="tag">Forensics</span>
-					        <span class="tag">Crypto</span>
-					        <span class="tag">Pwn</span>
-					        <span class="tag">Network Security</span>
-					        <span class="tag">Mobile Security</span>
-					        <span class="tag">Programming</span>  
+                            <span class="tag">Web</span>
+                            <span class="tag">Crypto</span>
+                            <span class="tag">Pwn</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/ctf.html" class="btn btn-primary">
+                            <a href="projects/ctf.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
-                            <a href="https://cloud.ctf.in.th/score/view.html?id=BWFHQDZYNH&t=WpUCDQyoXaG7MSteD4BK%2FJg3qyIsUCRE3k6AjZeRXMnIarFopkvN%2Fz%2FKa3jmVg9Zaf9xaUTR0yk%3D&fbclid=PARlRTSAMfs1FleHRuA2FlbQIxMAABpxo68HJWH-wl3ibZn_oH_4sw-g3HIoPUqx-t6TT-oiTEiTn2sWkE_ksbw5eB_aem_ufBRWkn9oM-bUe-wy-ixTg" class="btn btn-outline">
-                                ดูผลการแข่งขัน
+                            <a href="https://cloud.ctf.in.th/score/view.html?id=BWFHQDZYNH&t=WpUCDQyoXaG7MSteD4BK%2FJg3qyIsUCRE3k6AjZeRXMnIarFopkvN%2Fz%2FKa3jmVg9Zaf9xaUTR0yk%3D&fbclid=PARlRTSAMfs1FleHRuA2FlbQIxMAABpxo68HJWH-wl3ibZn_oH_4sw-g3HIoPUqx-t6TT-oiTEiTn2sWkE_ksbw5eB_aem_ufBRWkn9oM-bUe-wy-ixTg" target="_blank" rel="noopener" class="btn btn-card-secondary">
+                                <i class="fas fa-trophy"></i> คะแนน
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- 4. BDI Hackathon 2025 -->
+                <div class="project-card" data-category="camp">
                     <div class="project-image">
-                        <a href="projects/bdi.html"><img src="img/bdi.png" alt="CTF"></a>
-                        <div class="project-overlay">
-                            <a href="projects/bdi.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/bdi.png" alt="BDI Hackathon">
+                        <div class="project-badge">Hackathon</div>
                     </div>
                     <div class="project-content">
                         <h3>BDI Hackathon 2025</h3>
-                        <p>การแข่งขันทั่วประเทศเกี่ยวกับ Data BDI Hackathon 2025</p>
+                        <p>แข่งขันคิดค้นนวัตกรรมการนำ Big Data และเทคโนโลยี AI ไปใช้แก้ไขปัญหาจริง</p>
                         <div class="project-tags">
                             <span class="tag">Hackathon</span>
                             <span class="tag">Data</span>
-                            <span class="tag">Ai</span>
+                            <span class="tag">AI</span>
+                            <span class="tag">Figma</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/bdi.html" class="btn btn-primary">
+                            <a href="projects/bdi.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
-                            
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- 5. Computing Robot Contest 2025 -->
+                <div class="project-card" data-category="iot camp">
                     <div class="project-image">
-                        <a href="projects/robot.html"><img src="img/computer fair.png" alt="Robot"></a>
-                        <div class="project-overlay">
-                            <a href="projects/robot.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/computer fair.png" alt="Computing Robot Contest">
+                        <div class="project-badge">Competition</div>
                     </div>
                     <div class="project-content">
                         <h3>Computing Robot Contest 2025</h3>
-                        <p>หุ่นยนต์เดินตามทางพัฒนาขึ้นเพื่อนำมาแข่งใน Computing Robot Contest 2025</p>
+                        <p>ประกวดหุ่นยนต์เดินตามเส้นและหลบหลีก พัฒนาความสามารถบอร์ดสั่งการ IoT</p>
                         <div class="project-tags">
                             <span class="tag">Arduino</span>
-                            <span class="tag">C</span>
                             <span class="tag">C++</span>
                             <span class="tag">IoT</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/robot.html" class="btn btn-primary">
+                            <a href="projects/robot.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
-                            <!-- <a href="https://github.com/pixchy-commits/christmas-tree/tree/main" class="btn btn-outline">
-                                <i class="fab fa-github"></i> ดูโค้ด
-                            </a> -->
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- 6. Samsung Solve for Tomorrow -->
+                <div class="project-card" data-category="camp">
                     <div class="project-image">
-                        <a href="projects/samsung.html"><img src="https://d3q27bh1u24u2o.cloudfront.net/news/LBB_Online_-_2023-08-28T102027.930.png" alt="samsung"></a>
-                        <div class="project-overlay">
-                            <a href="projects/samsung.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://d3q27bh1u24u2o.cloudfront.net/news/LBB_Online_-_2023-08-28T102027.930.png" alt="Solve for Tomorrow">
+                        <div class="project-badge">Competition</div>
                     </div>
                     <div class="project-content">
-                        <h3>Solve for Tomorrow</h3>
-                        <p>การแข่งขันที่จัดโดย Samsung โดยการแข่งขันนี้จะแข่งกันเน้นการใช้ ความคิดสร้างสรรค์ การแก้ปัญหาต่างๆที่พบ การออกแบบนวัตกรรม</p>
+                        <h3>Samsung Solve for Tomorrow</h3>
+                        <p>แข่งขันออกแบบนวัตกรรมและความคิดสร้างสรรค์แก้ปัญหาสังคมรอบด้าน</p>
                         <div class="project-tags">
-                            <span class="tag">ความคิดสร้างสรรค์</span>
-                            <span class="tag">การออกแบบนวัตกรรม</span>
+                            <span class="tag">Design Thinking</span>
+                            <span class="tag">Innovation</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/samsung.html" class="btn btn-primary">
+                            <a href="projects/samsung.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 7. ITCamp21 @ KMITL -->
+                <div class="project-card" data-category="game camp">
                     <div class="project-image">
-                        <a href="projects/itcamp21.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6EHCMD7pJIJSO9ThdpTDFMIRGtDd69gcw6w&s" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/itcamp21.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6EHCMD7pJIJSO9ThdpTDFMIRGtDd69gcw6w&s" alt="ITCamp21">
+                        <div class="project-badge">Camp</div>
                     </div>
                     <div class="project-content">
-                        <h3>ITCamp21 @ KMITL (Web Application)</h3>
-                        <p>ค่ายคณะ IT 4 วัน 3 คืน ที่คณะเทคโนโลยีลาดกระบัง</p>
+                        <h3>ITCamp 21 (Web App Track)</h3>
+                        <p>ค่ายปฏิบัติการเจาะลึกวิชาการไอทีลาดกระบัง ได้พัฒนาทักษะการเขียนเว็บขั้นสูง</p>
                         <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
+                            <span class="tag">SvelteKit</span>
+                            <span class="tag">Tailwind</span>
                             <span class="tag">JavaScript</span>
-                            <span class="tag">Svelte & SvelteKit</span>
-                            <span class="tag">Tailwind CSS</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/itcamp21.html" class="btn btn-primary">
+                            <a href="projects/itcamp21.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 8. NCSA MOOC Cyber-Learning -->
+                <div class="project-card" data-category="cert">
                     <div class="project-image">
-                        <a href="projects/ncsa.html"><img src="https://ncsec.ncsa.or.th/wp-content/uploads/2024/04/logo-ncsa_mooc-web_AW_LOGO_MOOC_%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B2-edited.webp" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/ncsa.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://ncsec.ncsa.or.th/wp-content/uploads/2024/04/logo-ncsa_mooc-web_AW_LOGO_MOOC_%E0%B9%84%E0%B8%A1%E0%B9%8ำ%E0%B8%A1%E0%B8%B5%E0%B9%80%E0%B8%87%E0%B8%B2-edited.webp" alt="NCSA MOOC Cyber-Learning">
+                        <div class="project-badge">Certificate</div>
                     </div>
                     <div class="project-content">
                         <h3>NCSA MOOC Cyber-Learning</h3>
-                        <p>เรียนรู้การเจาะระบบเบื้องต้น การเรียนออนไลน์</p>
+                        <p>อบรมเรียนรู้การเจาะระบบเชิงป้องกัน ทฤษฎีความปลอดภัยข้อมูลไซเบอร์</p>
                         <div class="project-tags">
-                            <span class="tag">Cyber</span>
-                            <span class="tag">MOOC</span>
+                            <span class="tag">Cyber Security</span>
+                            <span class="tag">E-Learning</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/ncsa.html" class="btn btn-primary">
+                            <a href="projects/ncsa.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 9. AIoT for Industrial -->
+                <div class="project-card" data-category="iot cert">
                     <div class="project-image">
-                        <a href="projects/aiot.html"><img src="https://www.spu.ac.th/fac/informatics/wp-content/smush-webp/sites/10/2025/05/AI-for-Gen-Alpha-9-1024x1024.jpg.webp" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/aiot.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://www.spu.ac.th/fac/informatics/wp-content/smush-webp/sites/10/2025/05/AI-for-Gen-Alpha-9-1024x1024.jpg.webp" alt="AIoT for Industrial">
+                        <div class="project-badge">Certificate</div>
                     </div>
                     <div class="project-content">
                         <h3>AIoT for Industrial</h3>
-                        <p>เรียนรู้การผสาน AI + IoT → ประยุกต์ใน Smart Factory</p>
+                        <p>คอร์สเรียนผสานปัญญาประดิษฐ์และเซ็นเซอร์ในโรงงานอัจฉริยะ (Smart Factory)</p>
                         <div class="project-tags">
                             <span class="tag">AI</span>
                             <span class="tag">IoT</span>
-                            <span class="tag">MOOC</span>
+                            <span class="tag">Smart Factory</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/aiot.html" class="btn btn-primary">
+                            <a href="projects/aiot.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 10. Minicamp 21 -->
+                <div class="project-card" data-category="camp">
                     <div class="project-image">
-                        <a href="projects/minicamp21.html"><img src="img/minicamp21.1.jpg" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/minicamp21.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/minicamp21.1.jpg" alt="Minicamp 21">
+                        <div class="project-badge">Camp</div>
                     </div>
                     <div class="project-content">
                         <h3>Minicamp 21</h3>
-                        <p>ค่ายปฏิบัติวิชาการที่คณะวิศวกรรมศาสตร์</p>
+                        <p>ค่ายปฏิบัติการทางด้านวิศวกรรมศาสตร์ เรียนรู้ทฤษฎีและทดลองทำแล็บด้านวิศวะ</p>
                         <div class="project-tags">
-                            <span class="tag">วิศวกรรมศาสตร์</span>
+                            <span class="tag">Engineering</span>
+                            <span class="tag">Lab</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/minicamp21.html" class="btn btn-primary">
+                            <a href="projects/minicamp21.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 11. Minicamp 21 micro-bit -->
+                <div class="project-card" data-category="iot camp">
                     <div class="project-image">
-                        <a href="projects/microbit.html"><img src="https://schoologythailand.com/img/slide/slide1.png" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/microbit.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="https://schoologythailand.com/img/slide/slide1.png" alt="Minicamp 21 micro-bit">
+                        <div class="project-badge">Camp</div>
                     </div>
                     <div class="project-content">
                         <h3>Minicamp 21 micro-bit</h3>
-                        <p>ค่ายปฏิบัติวิชาการที่คณะวิศวกรรมศาสตร์</p>
+                        <p>ศึกษาการพัฒนาอุปกรณ์ฝังตัวและประดิษฐ์ผลงานควบคุมเบื้องต้นด้วยบอร์ด micro:bit</p>
                         <div class="project-tags">
-                            <span class="tag">วิศวกรรมศาสตร์</span>
-                            <span class="tag">micro-bit</span>
+                            <span class="tag">micro:bit</span>
+                            <span class="tag">Embedded</span>
+                            <span class="tag">IoT</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/microbit.html" class="btn btn-primary">
+                            <a href="projects/microbit.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 12. อบรบวิชาการ ที่โรงเรียนบึงกาฬ -->
+                <div class="project-card" data-category="cert">
                     <div class="project-image">
-                        <a href="projects/bksc.html"><img src="img/bksc.png" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/bksc.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/bksc.png" alt="อบรบวิชาการ">
+                        <div class="project-badge">Seminar</div>
                     </div>
                     <div class="project-content">
-                        <h3>อบรบวิชาการ ที่โรงเรียนบึงกาฬ</h3>
-                        <p>เป็นการอบรบวิชาการที่โรงเรียนบึงกาฬโดยศาสตราจารย์จากมหาวิทยาลัยขอนแก่น</p>
+                        <h3>อบรมวิชาการ AI & Physics</h3>
+                        <p>สัมมนาฟิสิกส์และปัญญาประดิษฐ์โดยคณะอาจารย์จากมหาวิทยาลัยขอนแก่น</p>
                         <div class="project-tags">
                             <span class="tag">AI</span>
-                            <span class="tag">ฟิสิกส์</span>
+                            <span class="tag">Physics</span>
+                            <span class="tag">KKU</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/bksc.html" class="btn btn-primary">
+                            <a href="projects/bksc.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <!-- 13. วิทยากรโดรน -->
+                <div class="project-card" data-category="cert">
                     <div class="project-image">
-                        <a href="projects/drone.html"><img src="img/drone.png" alt=""></a>
-                        <div class="project-overlay">
-                            <a href="projects/drone.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
+                        <img src="img/drone.png" alt="วิทยากรโดรน">
+                        <div class="project-badge">Speaker</div>
                     </div>
                     <div class="project-content">
-                        <h3>วิทยากรโดรน</h3>
-                        <p>เป็นวิทยากรโดรนที่โรงเรียนบึงกาฬสอนการใช้งานโดรนให้โรงเรียนอื่น</p>
+                        <h3>วิทยากรบรรยายการคุมโดรน</h3>
+                        <p>รับหน้าที่วิทยากรสอนหลักการบังคับและการใช้งานโดรนแก่โรงเรียนรอบข้าง</p>
                         <div class="project-tags">
-                            <span class="tag">วิทยากร</span>
+                            <span class="tag">Drone</span>
+                            <span class="tag">Speaker</span>
+                            <span class="tag">Physics</span>
                         </div>
                         <div class="project-buttons">
-                            <a href="projects/drone.html" class="btn btn-primary">
+                            <a href="projects/drone.html" class="btn btn-card-primary">
                                 <i class="fas fa-info-circle"></i> รายละเอียด
                             </a>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>         
     </section>
-
-    <!-- Gallery removed for simplicity -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -508,16 +556,16 @@
                     <a href="#home">หน้าแรก</a>
                     <a href="#about">เกี่ยวกับ</a>
                     <a href="#skills">ทักษะ</a>
-                    <a href="#projects">โปรเจค</a>
+                    <a href="#projects">ผลงาน</a>
                 </div>
                 <div class="footer-social">
-                    <a href="https://github.com/karinchaiamonvanich"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/karinchaiamonvanich" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Karin Portfolio. สร้างด้วย <i class="fas fa-heart"></i> และ <i class="fas fa-code"></i></p>
+                <p>&copy; 2025 Karin Portfolio. สร้างด้วยความใส่ใจ & รหัสคอมพิวเตอร์ <i class="fas fa-heart"></i></p>
             </div>
         </div>
     </footer>
